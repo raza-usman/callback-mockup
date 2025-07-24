@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* API Documentation Theme */
+    --background: 215 28% 17%;
+    --foreground: 210 20% 98%;
+
+    --card: 217 32% 18%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 217 32% 18%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 215 27% 32%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27% 32%;
+    --muted-foreground: 217 10% 65%;
+
+    --accent: 215 27% 32%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27% 32%;
+    --input: 215 27% 32%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 215 28% 17%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 215 27% 32%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 27% 32%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Custom tokens for API docs */
+    --method-post: 142 76% 36%;
+    --method-get: 217 91% 60%;
+    --required-red: 0 84% 60%;
+    --code-background: 220 13% 18%;
+    --success-green: 142 76% 36%;
+    --syntax-keyword: 217 91% 60%;
+    --syntax-string: 142 69% 58%;
+    --syntax-number: 35 91% 65%;
+  }
+
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 210 20% 98%;
+
+    --card: 217 32% 18%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 217 32% 18%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 215 27% 32%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27% 32%;
+    --muted-foreground: 217 10% 65%;
+
+    --accent: 215 27% 32%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27% 32%;
+    --input: 215 27% 32%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 215 28% 17%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 215 27% 32%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 27% 32%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) hsl(var(--background));
+  }
+}
