@@ -40,16 +40,6 @@ const MainContent = () => {
         </span>
       </div>
 
-      {/* Authentication Section */}
-      <Card className="p-4 mb-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Lock className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm font-medium">Authentication</span>
-          </div>
-        </div>
-      </Card>
-
       {/* Callback Section */}
       <Card className="p-4 mb-6">
         <Accordion type="single" collapsible className="w-full">
@@ -476,6 +466,15 @@ const MainContent = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </Card>
+      {/* Authentication Section */}
+      <Card className="p-4 mb-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Lock className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm font-medium">Authentication</span>
+          </div>
+        </div>
       </Card>
 
       {/* API Code Playground */}
