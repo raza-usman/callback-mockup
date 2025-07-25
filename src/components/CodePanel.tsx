@@ -32,7 +32,14 @@ const CodePanel = () => {
       label: "Java",
       icon: <Coffee className="w-4 h-4" />,
       code: `{
-  "Barcode": "3SDEVC903942795"
+  "first_name": "first_name8",
+  "last_name": "last_name6", 
+  "email": "email8",
+  "cc_emails": "cc_emails8",
+  "organization": "organization2",
+  "reference": "reference4",
+  "address": "address4",
+  "address_2": "address_22"
 }`,
     },
     {
@@ -45,8 +52,13 @@ const CodePanel = () => {
       ),
       code: `{
   "first_name": "first_name8",
-  "last_name": "last_name6",
-  "email": "email8"
+  "last_name": "last_name6", 
+  "email": "email8",
+  "cc_emails": "cc_emails8",
+  "organization": "organization2",
+  "reference": "reference4",
+  "address": "address4",
+  "address_2": "address_22"
 }`,
     },
     {
@@ -58,8 +70,14 @@ const CodePanel = () => {
         </div>
       ),
       code: `{
+  "first_name": "first_name8",
+  "last_name": "last_name6", 
+  "email": "email8",
+  "cc_emails": "cc_emails8",
   "organization": "organization2",
-  "reference": "reference4"
+  "reference": "reference4",
+  "address": "address4",
+  "address_2": "address_22"
 }`,
     },
     {
@@ -71,6 +89,12 @@ const CodePanel = () => {
         </div>
       ),
       code: `{
+  "first_name": "first_name8",
+  "last_name": "last_name6", 
+  "email": "email8",
+  "cc_emails": "cc_emails8",
+  "organization": "organization2",
+  "reference": "reference4",
   "address": "address4",
   "address_2": "address_22"
 }`,
@@ -84,8 +108,14 @@ const CodePanel = () => {
         </div>
       ),
       code: `{
+  "first_name": "first_name8",
+  "last_name": "last_name6", 
+  "email": "email8",
   "cc_emails": "cc_emails8",
-  "email": "email8"
+  "organization": "organization2",
+  "reference": "reference4",
+  "address": "address4",
+  "address_2": "address_22"
 }`,
     },
   ];

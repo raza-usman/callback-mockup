@@ -44,14 +44,14 @@ const MainContent = () => {
       <Card className="p-4 mb-6">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="callbacks">
-            <AccordionTrigger className="text-sm font-medium">
+            <AccordionTrigger className="text-sm font-medium no-underline hover:no-underline">
               Callback
             </AccordionTrigger>
             <AccordionContent>
               <Accordion type="single" collapsible className="w-full">
                 {/* Callback 1 - Shipment Created */}
                 <AccordionItem value="callback-1">
-                  <AccordionTrigger className="text-sm">
+                  <AccordionTrigger className="text-sm no-underline hover:no-underline">
                     Shipment Created Callback
                   </AccordionTrigger>
                   <AccordionContent>
@@ -123,9 +123,11 @@ const MainContent = () => {
                                 setShowProperties1(!showProperties1)
                               }
                             >
-                              {showProperties1
-                                ? "- Hide 3 properties"
-                                : "+ Show 3 properties"}
+                              <Badge variant="secondary">
+                                {showProperties1
+                                  ? "- Hide 3 properties"
+                                  : "+ Show 3 properties"}
+                              </Badge>
                             </div>
 
                             {showProperties1 && (
@@ -194,7 +196,7 @@ const MainContent = () => {
 
                 {/* Callback 2 - Shipment Updated */}
                 <AccordionItem value="callback-2">
-                  <AccordionTrigger className="text-sm">
+                  <AccordionTrigger className="text-sm no-underline hover:no-underline">
                     Shipment Updated Callback
                   </AccordionTrigger>
                   <AccordionContent>
@@ -266,9 +268,11 @@ const MainContent = () => {
                                 setShowProperties2(!showProperties2)
                               }
                             >
-                              {showProperties2
-                                ? "- Hide 3 properties"
-                                : "+ Show 3 properties"}
+                              <Badge variant="secondary">
+                                {showProperties2
+                                  ? "- Hide 3 properties"
+                                  : "+ Show 3 properties"}
+                              </Badge>
                             </div>
 
                             {showProperties2 && (
@@ -337,7 +341,7 @@ const MainContent = () => {
 
                 {/* Callback 3 - Shipment Delivered */}
                 <AccordionItem value="callback-3">
-                  <AccordionTrigger className="text-sm">
+                  <AccordionTrigger className="text-sm no-underline hover:no-underline">
                     Shipment Delivered Callback
                   </AccordionTrigger>
                   <AccordionContent>
@@ -409,9 +413,11 @@ const MainContent = () => {
                                 setShowProperties3(!showProperties3)
                               }
                             >
-                              {showProperties3
-                                ? "- Hide 3 properties"
-                                : "+ Show 3 properties"}
+                              <Badge variant="secondary">
+                                {showProperties3
+                                  ? "- Hide 3 properties"
+                                  : "+ Show 3 properties"}
+                              </Badge>
                             </div>
 
                             {showProperties3 && (
@@ -421,7 +427,9 @@ const MainContent = () => {
                                     <span className="text-sm font-medium text-foreground">
                                       shipment_id
                                     </span>
-                                    <Badge variant="default">string</Badge>
+                                    <span className="text-syntax-string ml-4">
+                                      string
+                                    </span>
                                     <Badge variant="outline">Required</Badge>
                                   </div>
                                   <p className="text-sm text-muted-foreground">
@@ -434,7 +442,9 @@ const MainContent = () => {
                                     <span className="text-sm font-medium text-foreground">
                                       tracking_number
                                     </span>
-                                    <Badge variant="default">string</Badge>
+                                    <span className="text-syntax-string ml-4">
+                                      string
+                                    </span>
                                     <Badge variant="outline">Required</Badge>
                                   </div>
                                   <p className="text-sm text-muted-foreground">
@@ -447,8 +457,10 @@ const MainContent = () => {
                                     <span className="text-sm font-medium text-foreground">
                                       status
                                     </span>
-                                    <Badge variant="default">string</Badge>
-                                    <Badge variant="default">Required</Badge>
+                                    <span className="text-syntax-string ml-4">
+                                      string
+                                    </span>
+                                    <Badge variant="outline">Required</Badge>
                                   </div>
                                   <p className="text-sm text-muted-foreground">
                                     Current status of the shipment
@@ -502,23 +514,6 @@ const MainContent = () => {
             <AccordionContent>
               {/* Customer Fields */}
               <div className="space-y-6">
-                <Card className="p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium">Customer</span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-primary rounded-sm"></div>
-                      <span className="text-sm">Address</span>
-                    </div>
-
-                    <div>
-                      <span className="text-sm">Address 2</span>
-                    </div>
-                  </div>
-                </Card>
-
                 {/* Collection Location */}
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
@@ -526,9 +521,12 @@ const MainContent = () => {
                       CollectionLocation
                     </span>
                   </div>
-                  <div className="text-xs text-syntax-string bg-muted px-2 py-1 rounded">
+                  <Badge variant="outline" className="text-xs">
                     String
-                  </div>
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    REQUIRED
+                  </Badge>
                   <div className="text-sm text-muted-foreground">
                     Code of delivery location at PostNL Pakketten
                   </div>
@@ -548,9 +546,12 @@ const MainContent = () => {
                   <div className="flex items-center space-x-2">
                     <span className="text-sm font-medium">ContactPerson</span>
                   </div>
-                  <div className="text-xs text-syntax-string bg-muted px-2 py-1 rounded">
+                  <Badge variant="outline" className="text-xs">
                     String
-                  </div>
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    REQUIRED
+                  </Badge>
                   <div className="text-sm text-muted-foreground">
                     Name of customer contact person
                   </div>
@@ -566,11 +567,11 @@ const MainContent = () => {
                   <div className="flex items-center space-x-2">
                     <span className="text-sm font-medium">CustomerCode</span>
                     <Badge variant="outline" className="text-xs">
+                      String
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
                       REQUIRED
                     </Badge>
-                  </div>
-                  <div className="text-xs text-syntax-string bg-muted px-2 py-1 rounded">
-                    String
                   </div>
                   <div className="text-sm text-muted-foreground">
                     Customer code as known at PostNL Pakketten
@@ -579,6 +580,11 @@ const MainContent = () => {
                     Constraints: <span className="italic">Minimum Length:</span>{" "}
                     1, <span className="italic">Maximum Length:</span> 6
                   </div>
+                  <input
+                    type="text"
+                    className="w-full bg-secondary border border-border rounded px-3 py-2 text-sm"
+                    defaultValue="25"
+                  />
                 </div>
               </div>
             </AccordionContent>
