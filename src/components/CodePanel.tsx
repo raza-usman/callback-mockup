@@ -16,16 +16,28 @@ const CodePanel = () => {
       id: "http",
       label: "HTTP",
       icon: <Globe className="w-4 h-4" />,
-      code: `{
-  "first_name": "first_name8",
-  "last_name": "last_name6", 
-  "email": "email8",
-  "cc_emails": "cc_emails8",
-  "organization": "organization2",
-  "reference": "reference4",
-  "address": "address4",
-  "address_2": "address_22"
-}`,
+      code: `curl -X PUT \
+  --url 'https://thingspace.verizon.com/api/m2m/v1/devices/serviceType6/actions/deviceId'  \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer {OAUTH_ACCESS_TOKEN}' \
+  --data-raw '{
+  "deviceIds": [
+    {
+      "id": "42590078891480000008",
+      "kind": "iccid"
+    }
+  ],
+  "deviceIdsTo": [
+    {
+      "id": "89148000000842590078",
+      "kind": "iccid"
+    }
+  ],
+  "change4gOption": "ChangeICCID",
+  "zipCode": "98802",
+  "servicePlan": "4G 2GB"
+}'`,
     },
     {
       id: "java",
@@ -128,9 +140,9 @@ const CodePanel = () => {
   };
 
   return (
-    <div className="bg-code-background rounded-lg border border-border overflow-hidden flex-1 h-[90vh] w-full">
+    <div className="bg-code-background rounded-lg border border-border overflow-hidden flex-1 h-[90vh] max-w-[520px]">
       {/* Tab Headers */}
-      <div className="flex border-b border-border bg-card justify-between w-full">
+      <div className="flex border-b border-border bg-card justify-between max-w-[520px]">
         {codeTabs.map((tab) => (
           <button
             key={tab.id}
@@ -148,7 +160,7 @@ const CodePanel = () => {
       </div>
 
       {/* Code Content */}
-      <div className="p-6">
+      <div className="p-6 overflow-x-auto bg-[rgb(29,31,33)]">
         <pre className="text-sm text-foreground font-mono whitespace-pre-wrap">
           <code
             dangerouslySetInnerHTML={{

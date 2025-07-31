@@ -1,6 +1,7 @@
 import { ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ServiceAccordion from "./ServiceAccordion";
 
 const Sidebar = () => {
   const menuItems = [
@@ -9,8 +10,20 @@ const Sidebar = () => {
       items: ["How to Get Started"],
     },
     {
-      title: "GUIDES",
+      title: "GUIDED WALKTHROUGHS",
       items: ["Guided Walkthroughs"],
+    },
+    {
+      title: "DEVDAY 2024",
+      items: ["DEVDAY 2024"],
+    },
+    {
+      title: "SESSION MANAGEMENT",
+      items: ["SESSION MANAGEMENT"],
+    },
+    {
+      title: "CONNECTIVITY MANAGEMENT",
+      items: ["CONNECTIVITY MANAGEMENT"],
     },
     {
       title: "API ENDPOINTS",
@@ -24,12 +37,16 @@ const Sidebar = () => {
       ],
     },
     {
-      title: "CHECKOUT & DELIVERY OPTIONS",
-      items: ["CHECKOUT & DELIVERY OPTIONS"],
+      title: "PRIVATE NETWORK / MEC",
+      items: ["PRIVATE NETWORK / MEC"],
     },
     {
-      title: "REFERENCE DATA",
-      items: ["Error codes"],
+      title: "EDGE TRANSPORTATION EXCHANGE",
+      items: ["EDGE TRANSPORTATION EXCHANGE"],
+    },
+    {
+      title: "DEVDAY 2023",
+      items: ["DEVDAY 2023"],
     },
   ];
 
@@ -48,7 +65,7 @@ const Sidebar = () => {
         </div>
 
         <nav className="space-y-4">
-          {menuItems.map((section, index) => (
+          {/* {menuItems.map((section, index) => (
             <div key={index} className="space-y-2">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                 {section.title}
@@ -74,7 +91,8 @@ const Sidebar = () => {
                 ))}
               </div>
             </div>
-          ))}
+          ))} */}
+          <ServiceAccordion />
         </nav>
 
         <div className="mt-8 pt-4 border-t border-sidebar-border">
