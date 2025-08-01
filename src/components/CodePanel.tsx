@@ -4,14 +4,14 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-bash';
 import 'prismjs/themes/prism-tomorrow.css';
 
-interface CodeTab {
+export interface CodeTab {
   id: string;
   label: string;
   icon: JSX.Element;
   code: string;
 }
 
-const CodePanel = () => {
+const CodePanel = ({codeTabs, panel }: {codeTabs: CodeTab[]; panel?: Array<string>}) => {
   const [activeTab, setActiveTab] = useState('http');
   const [activePanel, setActivePanel] = useState<'request' | 'response'>(
     'request'
@@ -66,47 +66,6 @@ const CodePanel = () => {
     },
   ];
 
-  const codeTabs: CodeTab[] = [
-    {
-      id: 'http',
-      label: 'HTTP',
-      icon: <Globe className='w-4 h-4' />,
-      code: `curl -X PUT \\
-  --url 'https://thingspace.verizon.com/api/m2m/v1/devices/serviceType6/actions/deviceId'  \\
-  -H 'Accept: application/json' \\
-  -H 'Content-Type: application/json' \\
-  -H 'Authorization: Bearer {OAUTH_ACCESS_TOKEN}' \\
-  --data-raw '{
-  "deviceIds": [
-    {
-      "id": "42590078891480000008",
-      "kind": "iccid"
-    }
-  ],
-  "deviceIdsTo": [
-    {
-      "id": "89148000000842590078",
-      "kind": "iccid"
-    }
-  ],
-  "change4gOption": "ChangeICCID",
-  "zipCode": "98802",
-  "servicePlan": "4G 2GB"
-}'`,
-    },
-    // Other language tabs (Java, PHP, etc.) remain unchanged
-    {
-      id: 'java',
-      label: 'Java',
-      icon: <Coffee className='w-4 h-4' />,
-      code: `public class Example {
-  public static void main(String[] args) {
-    System.out.println("Hello Java");
-  }
-}`,
-    },
-  ];
-
   const getHighlightedCode = (code: string, lang: string = 'bash') => {
     const grammar = Prism.languages[lang] || Prism.languages.bash;
     return Prism.highlight(code, grammar, lang);
@@ -129,7 +88,7 @@ const CodePanel = () => {
 
           <div className='flex-1 overflow-x-auto'>
             <div className='flex justify-start whitespace-nowrap'>
-              {languageTabs.map((tab) => (
+              {languageTabs?.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
@@ -155,7 +114,7 @@ const CodePanel = () => {
       <div className='bg-code-background rounded-lg border border-border overflow-hidden flex-1 h-[70vh] max-w-[520px] relative'>
         {/* Request/Response Switch */}
         <div className='flex border-b border-border bg-muted text-sm font-medium'>
-          {['Request', 'Response'].map((panel) => (
+          {panel?.map((panel) => (
             <button
               key={panel}
               onClick={() =>
@@ -185,7 +144,7 @@ const CodePanel = () => {
                   className='language-bash'
                   dangerouslySetInnerHTML={{
                     __html: getHighlightedCode(
-                      codeTabs.find((tab) => tab.id === activeTab)?.code || '',
+                      codeTabs?.find((tab) => tab.id === activeTab)?.code || '',
                       activeTab === 'http' ? 'bash' : 'java'
                     ),
                   }}
