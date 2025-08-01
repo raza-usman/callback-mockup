@@ -152,7 +152,7 @@ const CodePanel = () => {
           </button>
         </div>
       </div>
-      <div className='bg-code-background rounded-lg border border-border overflow-hidden flex-1 h-[90vh] max-w-[520px] relative'>
+      <div className='bg-code-background rounded-lg border border-border overflow-hidden flex-1 h-[70vh] max-w-[520px] relative'>
         {/* Request/Response Switch */}
         <div className='flex border-b border-border bg-muted text-sm font-medium'>
           {['Request', 'Response'].map((panel) => (
@@ -179,7 +179,7 @@ const CodePanel = () => {
             {/* Copy Button */}
 
             {/* Code Block */}
-            <div className='p-6 overflow-x-auto bg-[rgb(29,31,33)] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900'>
+            <div className='p-6 overflow-x-auto bg-[#1f2937] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900'>
               <pre className='text-sm font-mono whitespace-pre-wrap'>
                 <code
                   className='language-bash'
