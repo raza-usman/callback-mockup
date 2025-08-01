@@ -63,7 +63,10 @@ const MainContent = () => {
             <AccordionContent>
               <Accordion type='single' collapsible className='w-full'>
                 {/* Callback 1 - Change Device Identifier */}
-                <AccordionItem value='callback-1' className='border-0'>
+                <AccordionItem
+                  value='callback-1'
+                  className='border rounded-[5px] px-[15px] py-0'
+                >
                   <AccordionTrigger className='text-sm no-underline hover:no-underline'>
                     Change Device Identifier Callback
                   </AccordionTrigger>
