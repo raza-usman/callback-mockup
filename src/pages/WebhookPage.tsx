@@ -72,7 +72,7 @@ const WebhookPage = () => {
   return (
     <Layout>
       <div className="flex-[1.5_1_0%] p-6 overflow-y-auto w-full bg-background h-[96vh] mb-10">
-        <div className="max-w-4xl h-full">
+        <div className="w-full h-full">
           {/* Page Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-2">
